@@ -57,17 +57,17 @@ int n = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
 
 int AkkermanFunc(int m, int n)
-		{
-			if(m == 0)
-			{
-				return n + 1;
-			}
-			if(m > 0 && n == 0)
-			{
-				return AkkermanFunc(m - 1, 1);
-			}
-			return AkkermanFunc(m - 1, AkkermanFunc(m, n - 1));
-		}
+{
+	if(m == 0)
+	{
+		return n + 1;
+	}
+	if(m > 0 && n == 0)
+	{
+		return AkkermanFunc(m - 1, 1);
+	}
+	return AkkermanFunc(m - 1, AkkermanFunc(m, n - 1));
+}
 		
-		Console.WriteLine("Calculating of the Ackerman function: " + AkkermanFunc(m,n));
-        Console.WriteLine();
+Console.WriteLine("Calculating of the Ackerman function: " + AkkermanFunc(m,n));
+Console.WriteLine();
