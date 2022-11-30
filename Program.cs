@@ -23,7 +23,7 @@ ShowNumbers(num);
 M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30
 */
-
+/*
 Console.Write("Enter the number M: ");
 int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Enter the number N: ");
@@ -43,3 +43,31 @@ return (end + start)*(end - start + 1)/2;
 
 Console.WriteLine("The sum of natural elements between M and N: " + CalculateSum(m, n));
 Console.WriteLine();
+*/
+
+/*
+Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+m = 2, n = 3 -> A(m,n) = 9
+m = 3, n = 2 -> A(m,n) = 29
+*/
+Console.Write("Enter the number M: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter the number N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+
+int AkkermanFunc(int m, int n)
+		{
+			if(m == 0)
+			{
+				return n + 1;
+			}
+			if(m > 0 && n == 0)
+			{
+				return AkkermanFunc(m - 1, 1);
+			}
+			return AkkermanFunc(m - 1, AkkermanFunc(m, n - 1));
+		}
+		
+		Console.WriteLine("Calculating of the Ackerman function: " + AkkermanFunc(m,n));
+        Console.WriteLine();
